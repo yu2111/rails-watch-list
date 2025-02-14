@@ -1,25 +1,38 @@
 <div class="container">
   <h1><%= @list.name %></h1>
-   <%= link_to lists_path, class: "text-decoration-none" do %>
-    <p><i class="fa-solid fa-rotate-left"></i> back to lists</p>
-  <% end %>
-  <%= link_to new_list_bookmark_path(@list), class: "text-decoration-none" do %>
-    <p><i class="fa-solid fa-plus"></i> add a movie</p>
-  <% end %>
-  <div class="cards">
-      <% @movies.each do |movie| %>
-      <div class="card-trip">
-        <img src="<%=movie.poster_url%>" />
-        <div class="card-trip-infos">
-        <div>
-          <h2><%= movie.title %> - <%= movie.rating.round(2) %></h2>
-          <p><%= movie.overview %></p>
-        </div>
-        <%= link_to bookmark_path(Bookmark.find_by(movie_id: movie.id, list_id: @list.id)), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-          <h2 class="card-trip-pricing card-trip-user" style="text-danger"><i class="fa-solid fa-trash"></i></h2>
-        <% end %>
+  <div class="d-flex justify-content-between">
+    <%= link_to lists_path, class: "text-decoration-none" do %>
+      <p><i class="fa-solid fa-rotate-left"></i> back to lists</p>
+    <% end %>
+    <%= link_to new_list_bookmark_path(@list), class: "text-decoration-none" do %>
+      <p><i class="fa-solid fa-plus"></i> add a movie</p>
+    <% end %>
+  </div>
+  <div class="show-cards">
+    <% if @movies.any? %>
+    <% @movies.each do |movie| %>
+      <div class="card-product mb-3">
+        <img src="<%=movie.poster_url%>">
+        <div class="card-product-infos">
+          <div class="d-flex justify-content-between">
+            <%= link_to movie_path(movie), class: "text-decoration-none text-dark" do %>
+            <h2><%= movie.title %> - <i class="fa-solid fa-star"></i><%= movie.rating.round(2) %></h2>
+            <% end %>
+            <div>
+              <%= link_to bookmark_path(@bookmarks.find_by(movie_id: movie.id)), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-trash ml-auto border"></i>
+              <% end %>
+            </div>
+          </div>
+          <p><%= @bookmarks.find_by(movie_id: movie.id).comment %></p>
         </div>
       </div>
+    <% end %>
+    <% else %>
+    <h2>No movies yet</h2>
+    <%= link_to new_list_bookmark_path(@list), class: "text-decoration-none btn btn-danger h-30 text-light" do %>
+        <i class="fa-solid fa-plus"></i>
+      <% end %>
     <% end %>
   </div>
 </div>

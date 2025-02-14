@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <!-- Image and text -->
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to lists_path, class: "text-decoration-none navbar-brand" do %>
+        <%= image_tag "logo.png", size: "30", alt: "text", class: "ms-3 d-inline-block align-top" %>
+        Yu's Watch List
+      <% end %>
+    </nav>
     <%= yield %>
   </body>
 </html>

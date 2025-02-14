@@ -1,0 +1,13 @@
+<div class="container">
+  <%= link_to lists_path, class: "text-decoration-none mt-3" do %>
+    <p><i class="fa-solid fa-rotate-left"></i> back to lists</p>
+  <% end %>
+  <div class="card-product">
+  <img src="<%=@movie.poster_url%>">
+  <div class="card-product-infos">
+    <h2><%= @movie.title %> - <i class="fa-solid fa-star"></i> <%= @movie.rating.round(2) %></h2>
+    <p><%= @movie.overview %></p>
+  </div>
+</div>
+
+</div>
