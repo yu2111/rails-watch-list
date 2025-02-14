@@ -136,10 +136,17 @@
   .cards {
     grid-template-columns: 1fr;
   }
+
+  .show-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (min-width: 576px) {
   .cards {
+    grid-template-columns: 1fr;
+  }
+  .show-cards {
     grid-template-columns: 1fr;
   }
 }
@@ -148,16 +155,25 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
+  .show-cards {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (min-width: 992px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .show-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media (min-width: 1200px) {
   .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .show-cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
