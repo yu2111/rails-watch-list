@@ -1,8 +1,14 @@
-<div class="container">
-  <h1>Lists</h1>
-  <%= link_to new_list_path, class: "text-decoration-none" do %>
-    <p><i class="fa-solid fa-plus"></i> add a list</p>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= asset_path("movie.jpg") %>');">
+  <div class="container">
+    <h1>My Lists</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <%= link_to new_list_path, class: "text-decoration-none btn btn-light", style: "height: 45px" do %>
+      <p class="text-dark"><i class="fa-solid fa-plus"></i> add a list</p>
+    <% end %>
+  </div>
+</div>
+
+<div class="container my-5">
   <div class="cards">
     <% @lists.each do |list| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
