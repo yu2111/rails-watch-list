@@ -3,7 +3,7 @@
   <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.association :movie %>
     <%= f.input :comment %>
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-danger mb-3 text-light" %>
   <% end %>
   <%= link_to list_path(@list), class: "text-decoration-none mt-3" do %>
       <p><i class="fa-solid fa-rotate-left"></i> back to lists</p>
