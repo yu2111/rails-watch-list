@@ -1,24 +1,13 @@
-# README
+# Yu's Watchlist
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Yu's Watchlist is a movie tracking app that lets you create, organize, and manage custom watchlists for your favorite films, all in one convenient place. 🎬📽️
 
-Things you may want to cover:
+<img width="1463" alt="Screenshot 2025-06-03 at 14 22 33" src="https://github.com/user-attachments/assets/420d0a74-53b4-4f40-a630-0b178ffc15a5" />
 
-* Ruby version
+# Built with
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Rails 7 - Backend / Front-end
+- Heroku - Deployment
+- SQLite - Database
+- Bootstrap — Styling
+- Figma — Prototyping
